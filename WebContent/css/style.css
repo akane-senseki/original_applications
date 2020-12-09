@@ -1,5 +1,5 @@
-header li {
-  display: inline-block; }
+header .header_container {
+  display: flex; }
 
 h1 {
   color: #55c; }

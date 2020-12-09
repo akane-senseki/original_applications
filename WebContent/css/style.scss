@@ -1,10 +1,8 @@
 header{
-	li{
-		display: inline-block;
+	.header_container{
+		display: flex;
 	}
-	
 }
-
 h1{
 	color:#55c;
 }
