@@ -1,5 +1,7 @@
 package original_applications;
 
+import models.Pc_Entity;
+
 public class Chara {
     public static Pc_Entity h() {
         Pc_Entity h = new Pc_Entity();
@@ -8,10 +10,13 @@ public class Chara {
         h.setCon(10);
         h.setSiz(16);
         h.setDex(12);
+        h.setHp((int)(Math.ceil(h.getCon()+h.getSiz())/2));
+
 
         h.setAvoidance_add(46);
         h.setFist(0);
         h.setKick(40);
+
 
         return h;
     }
@@ -23,6 +28,7 @@ public class Chara {
         t.setCon(12);
         t.setSiz(13);
         t.setDex(13);
+        t.setHp((int)(Math.ceil(t.getCon()+t.getSiz())/2));
 
         t.setAvoidance_add(40);
         t.setFist(0);

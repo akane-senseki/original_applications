@@ -30,17 +30,17 @@
             <h1>akanes-apprications</h1>
             <div class="main_container">
                 <div class="main_item">
-                    <a href="#">Demo Battle</a>
+                    <a href="#"><img src="./images/top_battle.png" ></img></a>
                 </div>
                 <div class="main_item">
-                    <a href="#">Pc Dice</a>
+                    <a href="#"><img src="./images/top_dice.png" ></img></a>
                 </div>
                 <div class="main_item">
-                    <a href="#">Character Sheets</a>
+                    <a href="#"><img src="./images/top_sheet.png" ></img></a>
                 </div>
             </div>
         </div>
-        <footer>2020- akanes_apprications </footer>
+        <footer> 2020- akanes_apprications </footer>
     </div>
 </body>
 </html>
