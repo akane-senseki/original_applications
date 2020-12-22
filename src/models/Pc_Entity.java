@@ -1,23 +1,70 @@
 package models;
 
-public class Pc_Entity {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
+
+
+
+@Table(name = "pc_entity")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllPc_Entity",
+            query = "SELECT pc FROM Pc_Entity AS pc ORDER BY pc.id DESC"
+            )
+})
+
+@Entity
+public class Pc_Entity {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "name",nullable = false )
     private String name;
+
+    @Column(name = "name_ruby")
+    private String name_ruby;
+
+    //能力値-------------------------------------------------------------------
+
+    @Column(name="str")
     private int str;
+
+    @Column(name="con")
     private int con;
+
+    @Column(name="dex")
     private int dex;
+
+    @Column(name="siz")
     private int siz;
 
     private int hp ;
 
-    private int avoidance_add ;  //回避上乗せ分
-    private int avoidance ;
-
     private String db;
     private int db_roll ;
 
+    //技能値--------------------------------------------------------------------
+    @Column(name = "avoidance_add")
+    private int avoidance_add ;  //回避上乗せ分
+
+    private int avoidance ;
+
+    @Column(name = "kick")
     private int kick; //キック
+
+    @Column(name="fist")
     private int fist; //こぶし
+
+    @Column(name="headbutt")
     private int headbutt; //頭突き
 
 
