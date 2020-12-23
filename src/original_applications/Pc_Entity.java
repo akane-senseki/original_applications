@@ -15,6 +15,8 @@ public class Pc_Entity {
 
     private int kick; //キック
     private int fist; //こぶし
+
+
     public String getName() {
         return name;
     }
