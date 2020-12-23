@@ -10,8 +10,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 
-
-
 @Table(name = "pc_entity")
 @NamedQueries({
     @NamedQuery(
@@ -30,7 +28,7 @@ public class Pc_Entity {
     @Column(name = "name",nullable = false )
     private String name;
 
-    @Column(name = "name_ruby")
+    @Column(name = "name_ruby") //ふりがな
     private String name_ruby;
 
     //能力値-------------------------------------------------------------------
@@ -175,18 +173,79 @@ public class Pc_Entity {
 
 
 
-    public int getKick() {
+    public int getKick() {       //キック-----------------------------
         return kick + 25;
     }
     public void setKick(int kick) {
         this.kick = kick;
     }
-    public int getFist() {
+    public int getFist() {        //こぶし----------------------------
         return fist + 50;
     }
     public void setFist(int fist) {
         this.fist = fist;
     }
+    public int getHeadbutt() {         //頭突き-----------------------------
+        return headbutt + 30;
+    }
+    public void setHeadbutt(int headbutt) {
+        this.headbutt = headbutt;
+    }
+
+
+    public String pc_attack(){     //一番技能値が高い戦闘技能---------------------
+        String attack ;
+        if(kick > fist && kick > headbutt){
+            attack = "キック";
+            return attack;
+        }else if(fist > headbutt){ //等しい場合は頭突きに-----------------------
+            attack = "こぶし";
+            return attack;
+        }else{
+            attack = "頭突き";
+            return attack;
+        }
+    }
+
+
+    public int pc_attack_roll(){    //↑の数値
+        int attack ;
+        if(kick > fist && kick > headbutt){
+            attack = (int)((Math.ceil(Math.random()*6)));
+            return attack;
+        }else if(fist > headbutt){ //等しい場合は頭突きに-----------------------
+            attack = (int)((Math.ceil(Math.random()*3)));
+            return attack;
+        }else{
+            attack = (int)((Math.ceil(Math.random()*4)));
+            return attack;
+        }
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+    public String getName_ruby() {
+        return name_ruby;
+    }
+
+
+    public void setName_ruby(String name_ruby) {
+        this.name_ruby = name_ruby;
+    }
+
+//ここまでgetter/setter---------------------------------------------------------------------
+
+
+
 
 
 
