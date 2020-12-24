@@ -3,11 +3,58 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <label for="name">名前</label>
 <br />
-<input type="text" name="name" value="${pc_entity.name}" />
+<input type="text" name="name" id="name" value="${pc_entity.name}" />
 <br />
 <br />
 <label for="name_ruby">ふりがな</label>
 <br />
-<input type="text" name="name_ruby" value="${pc_entity.name}" />
+<input type="text" name="name_ruby" id="name_ruby"
+    value="${pc_entity.name_ruby}" />
 <br />
 <br />
+<p>能力値</p>
+<table>
+    <tbody>
+        <tr>
+            <th><label for="str">STR</label></th>
+            <th><label for="con">CON</label></th>
+            <th><label for="dex">DEX</label></th>
+            <th><label for="siz">SIZ</label></th>
+            <th>HP</th>
+            <th>DB</th>
+        </tr>
+        <tr>
+            <td><input type="number" name="str" id="str" class="input_min" onkeyup="show()" value="${pc_entity.str}" /></td>
+            <td><input type="number" name="con" id="con" class="input_min" onkeyup="show()" value="${pc_entity.con}" /></td>
+            <td><input type="number" name="dex" id="dex" class="input_min" value="${pc_entity.dex}" /></td>
+            <td><input type="number" name="siz" id="siz" class="input_min" onkeyup="show()" value="${pc_entity.siz}" /></td>
+            <td id="hp">--</td>
+            <td id="db">--</td>
+        </tr>
+    </tbody>
+</table>
+        <script>
+        function show(){
+            var str_date = document.getElementById("str").value;
+            var con_date = document.getElementById("con").value;
+            var siz_date = document.getElementById("siz").value;
+            document.getElementById("hp").innerHTML = Math.round((parseInt(con_date) + parseInt(siz_date))/2);
+
+            var db_num = parseInt(str_date) + parseInt(siz_date);
+            var db_text;
+            if(db_num > 2 && db_num <13){
+                db_text = "-1d4";
+            }else if(db_num < 25){
+                db_text = "0";
+            }else if(db_num < 33){
+                db_text = "61d4";
+            }else if(db_num < 41){
+                db_text = "+1d6";
+            }else if(db_num < 57){
+                db_text = "+2d6";
+            }else{
+                db_text = "未設定";
+            }
+                document.getElementById("db").innerHTML = db_text ;
+        }
+        </script>

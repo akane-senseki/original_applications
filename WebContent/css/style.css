@@ -27,6 +27,23 @@ footer {
   margin: 330px auto;
   text-align: center; }
 
+.input_min{
+    width: 60px;
+}
+
+/* input(type=number)のスピンボタンを消す！Chrome、Safariの場合
+ */
+ input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* input(type=number)のスピンボタンを消す！FireFox，IEの場合
+ */
+input[type="number"] {
+  -moz-appearance:textfield;
+}
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
