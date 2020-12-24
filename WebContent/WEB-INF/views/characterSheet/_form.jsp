@@ -38,10 +38,14 @@
             var str_date = document.getElementById("str").value;
             var con_date = document.getElementById("con").value;
             var siz_date = document.getElementById("siz").value;
+            var dex_date = document.getElementById("dex").value;
             document.getElementById("hp").innerHTML = Math.round((parseInt(con_date) + parseInt(siz_date))/2);
+            document.getElementById("dex_2").innerHTML = parseInt(dex_date)*2;
+            document.getElementById("avoidance").innerHTML = parseInt(dex_date)*2 + parseInt(document.getElementById("avoidance_add").value);
 
-            var db_num = parseInt(str_date) + parseInt(siz_date);
             var db_text;
+            var db_num = parseInt(str_date) + parseInt(siz_date);
+
             if(db_num > 2 && db_num <13){
                 db_text = "-1d4";
             }else if(db_num < 25){
@@ -58,3 +62,22 @@
                 document.getElementById("db").innerHTML = db_text ;
         }
         </script>
+        <br />
+        <br />
+        <p>技能値</p>
+        <table>
+            <tbody>
+            <tr>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>初期値</th>
+                <th>振分け</th>
+                <th>合計</th>
+            </tr>
+            <tr>
+                <th>回避</th>
+                <td id="dex_2"></td>
+                <td><input type="number" name="avoidance_add" id="avoidance_add" class="input_min" onkeyup="show()" value="${pc_entity.avoidance_add}"/></td>
+                <td id="avoidance"></td>
+            </tr>
+            </tbody>
+        </table>
