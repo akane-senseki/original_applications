@@ -31,7 +31,7 @@ public class CharacterSheetNewServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("_token", request.getSession().getId());
-        request.setAttribute("employee", new Pc_Entity());
+        request.setAttribute("pc_entity", new Pc_Entity());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/characterSheet/new.jsp");
         rd.forward(request, response);

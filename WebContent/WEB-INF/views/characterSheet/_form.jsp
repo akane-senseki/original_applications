@@ -43,8 +43,7 @@
         var con_data = document.getElementById("con").value;
         var siz_data = document.getElementById("siz").value;
         var dex_data = document.getElementById("dex").value;
-        document.getElementById("hp").innerHTML = Math
-                .round((parseInt(con_data) + parseInt(siz_data)) / 2);
+        document.getElementById("hp").innerHTML = Math.round((parseInt(con_data) + parseInt(siz_data)) / 2);
         document.getElementById("dex_2").innerHTML = parseInt(dex_data) * 2;
         document.getElementById("avoidance").innerHTML = parseInt(dex_data) * 2
                 + parseInt(document.getElementById("avoidance_add").value);
@@ -57,7 +56,7 @@
         } else if (db_num < 25) {
             db_text = "0";
         } else if (db_num < 33) {
-            db_text = "+s1d4";
+            db_text = "+1d4";
         } else if (db_num < 41) {
             db_text = "+1d6";
         } else if (db_num < 57) {
@@ -125,3 +124,9 @@
         document.getElementById("headbutt").innerHTML = parseInt(headbutt_data) + 25;
     }
 </script>
+<br />
+<br />
+<input type="hidden" name="_token" value="${_token}"/>
+<button type="submit" onclick="return check()">作成</button>
+<br/>
+<br/>
