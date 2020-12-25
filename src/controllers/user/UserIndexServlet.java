@@ -17,7 +17,7 @@ import utils.DBUtil;
 /**
  * Servlet implementation class CharacterSheetIndexServlet
  */
-@WebServlet("/charactersheet/index")
+@WebServlet("/user/index")
 public class UserIndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

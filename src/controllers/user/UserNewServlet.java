@@ -14,7 +14,7 @@ import models.Pc_Entity;
 /**
  * Servlet implementation class CharacterSheetNewServlet
  */
-@WebServlet("/charactersheet/new")
+@WebServlet("/user/new")
 public class UserNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

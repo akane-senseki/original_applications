@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CharacterSheetDestroyServlet
  */
-@WebServlet("/charactersheet/destroy")
+@WebServlet("/user/destroy")
 public class UserDestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

@@ -1,46 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="<c:url value='/css/reset.css'/>">
-<link rel="stylesheet" href="<c:url value='/css/style.css'/>">
-<title>Insert title here</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <div class="header_container">
-                <div class="header_item">
-                    <p>akanes-apprications</p>
-                </div>
-                <div class="header_item">
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">Demo Battle</a></li>
-                        <li><a href="#">Pc Dice</a></li>
-                        <li><a href="#">Character Sheets</a></li>
-                    </ul>
-                </div>
+<c:import url="../layout/app.jsp">
+    <c:param name="content">
+        <h1>akanes-apprications</h1>
+        <div class="main_container">
+            <div class="main_item">
+                <a href="#"><img src="./images/top_battle.png"></img></a>
             </div>
-        </header>
-        <div class="main">
-            <h1>akanes-apprications</h1>
-            <div class="main_container">
-                <div class="main_item">
-                    <a href="#"><img src="./images/top_battle.png" ></img></a>
-                </div>
-                <div class="main_item">
-                    <a href="#"><img src="./images/top_dice.png" ></img></a>
-                </div>
-                <div class="main_item">
-                    <a href="#"><img src="./images/top_sheet.png" ></img></a>
-                </div>
+            <div class="main_item">
+                <a href="#"><img src="./images/top_dice.png"></img></a>
+            </div>
+            <div class="main_item">
+                <a href="#"><img src="./images/top_sheet.png"></img></a>
             </div>
         </div>
-        <footer> 2020- akanes_apprications </footer>
-    </div>
-</body>
-</html>
+        <button type="button" onclick="show_login()">ログイン</button>
+        <button type="button" onclick="show_signup()">新規登録</button>
+
+<%-- サインアップフォーム --%>
+
+        <form method="POST" name="signup_form" action="<c:url value="/user/create" />">
+            <div id="show_signup">
+                <label for="input_mail">メールアドレス</label><br />
+                <input type="text"id="input_mail" name="mail" />
+                <br />
+                <br />
+                <label for="password">パスワード</label><br />
+                <input type="password"id="input_password" name="password" /> <br /> <br />
+                <label for="password">パスワードの再入力</label><br />
+                <input type="password" id="re_password" name="re_password" /> <br /> <br />
+                <button type="submit" onclick="return check()">登録</button>
+                <br/>
+                <a href="#">利用規約</a>
+                <a href="#">プライバシーポリシー</a>
+            </div>
+        </form>
+
+<%-- ここからログインフォーム --%>
+
+        <form method="POST" name="signin_form" action="<c:url value="/user/login" />">
+            <div id="show_signin">
+                <label for="input_mail">メールアドレス</label><br />
+                <input type="text"id="input_mail" name="mail" />
+                <br />
+                <br />
+                <label for="password">パスワード</label><br />
+                <input type="password"id="input_password" name="password" /> <br /> <br />
+                <button type="submit" onclick="return check()">登録</button>
+                <br/>
+                <a href="#">利用規約</a>
+                <a href="#">プライバシーポリシー</a>
+            </div>
+        </form>
+    </c:param>
+</c:import>

@@ -81,9 +81,7 @@
         <tr>
             <th>回避</th>
             <td id="dex_2"></td>
-            <td><input type="number" name="avoidance_add" id="avoidance_add"
-                class="input_min" onkeyup="show()"
-                value="${pc_entity.avoidance_add}" /></td>
+            <td><input type="number" name="avoidance_add" id="avoidance_add" class="input_min" onkeyup="show()" value="${pc_entity.avoidance_add}" /></td>
             <td id="avoidance"></td>
         </tr>
         <tr>
