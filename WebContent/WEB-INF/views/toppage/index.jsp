@@ -4,6 +4,9 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <h1>akanes-apprications</h1>
+        <c:if test="${flush != null }">
+            <h2><c:out value="${flush}"/></h2>
+        </c:if>
         <div class="main_container">
             <div class="main_item">
                 <a href="#"><img src="./images/top_battle.png"></img></a>

@@ -60,10 +60,10 @@ public class LoginServlet extends HttpServlet {
             em.getTransaction().begin();
             em.persist(u);
             em.getTransaction().commit();
-            request.setAttribute("flush","登録が完了しました");
+            request.getSession().setAttribute("flush","登録が完了しました");
             em.close();
 
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect(request.getContextPath()+"/index.html");
 
 
     }
