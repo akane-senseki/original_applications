@@ -88,14 +88,14 @@
             <th>キック</th>
             <td>25</td>
             <td><input type="number" name="kick_add" id="kick_add"
-                class="input_min" onkeyup="show_kick()" value="${pc_entity.kick}" /></td>
+                class="input_min" onkeyup="show_kick()" value="${pc_entity.kick_add}" /></td>
             <td id="kick"></td>
         </tr>
         <tr>
             <th>こぶし</th>
             <td>50</td>
             <td><input type="number" name="fist_add" id="fist_add"
-                class="input_min" onkeyup="show_fist()" value="${pc_entity.fist}" /></td>
+                class="input_min" onkeyup="show_fist()" value="${pc_entity.fist_add}" /></td>
             <td id="fist"></td>
         </tr>
         <tr>
@@ -103,7 +103,7 @@
             <td>10</td>
             <td><input type="number" name="headbutt_add" id="headbutt_add"
                 class="input_min" onkeyup="show_headbutt()"
-                value="${pc_entity.headbutt}" /></td>
+                value="${pc_entity.headbutt_add}" /></td>
             <td id="headbutt"></td>
         </tr>
     </tbody>

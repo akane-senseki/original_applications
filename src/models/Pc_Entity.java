@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -26,10 +24,6 @@ public class Pc_Entity {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
-    private User user;
 
     @Column(name = "name",nullable = false )
     private String name;
@@ -62,13 +56,16 @@ public class Pc_Entity {
 
     private int avoidance ;
 
-    @Column(name = "kick")
+    @Column(name = "kick_add")
+    private int kick_add; //キック上乗せ分
     private int kick; //キック
 
-    @Column(name="fist")
+    @Column(name="fist_add")
+    private int fist_add;
     private int fist; //こぶし
 
-    @Column(name="headbutt")
+    @Column(name="headbutt_add")
+    private int headbutt_add;
     private int headbutt; //頭突き
 
 
@@ -170,6 +167,11 @@ public class Pc_Entity {
     public void setAvoidance_add(int avoidance_add) {   //回避の追加分-----------------
         this.avoidance_add = avoidance_add;
     }
+    public int getAvoidance_add(){
+        return  avoidance_add;
+    }
+
+
     public int getAvoidance() {                          //回避そのものgetter-------------------
         this.avoidance = (int)(Math.ceil(dex * 2) + avoidance_add) ;
         return avoidance;
@@ -179,19 +181,41 @@ public class Pc_Entity {
 
 
 
-    public int getKick() {       //キック-----------------------------
+    public int getKick_add() {       //キック-----------------------------
+        return kick_add;
+    }
+    public void setKick_add(int kick_add) {
+        this.kick_add = kick_add;
+    }
+
+    public int getKick() {
         return kick + 25;
     }
     public void setKick(int kick) {
         this.kick = kick;
     }
-    public int getFist() {        //こぶし----------------------------
+
+
+    public int getFist_add() {        //こぶし----------------------------
+        return fist_add ;
+    }
+    public void setFist_add(int fist_add) {
+        this.fist_add = fist_add;
+    }
+    public int getFist() {
         return fist + 50;
     }
     public void setFist(int fist) {
         this.fist = fist;
     }
-    public int getHeadbutt() {         //頭突き-----------------------------
+
+    public int getHeadbutt_add() {         //頭突き-----------------------------
+        return headbutt_add;
+    }
+    public void setHeadbutt_add(int headbutt_add) {
+        this.headbutt = headbutt_add;
+    }
+    public int getHeadbutt() {
         return headbutt + 30;
     }
     public void setHeadbutt(int headbutt) {
