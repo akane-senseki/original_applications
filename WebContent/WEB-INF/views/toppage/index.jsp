@@ -20,16 +20,20 @@
 
 <%-- サインアップフォーム --%>
 
-        <form method="POST" name="signup_form" action="<c:url value="/user/create" />">
+        <form method="POST" name="signup_form" action="<c:url value="/login" />">
             <div id="show_signup">
+                <label for="input_name">表示名</label><br />
+                    <input type="text"id="input_name" name="name" />
+                <br />
+                <br />
                 <label for="input_mail">メールアドレス</label><br />
-                <input type="text"id="input_mail" name="mail" />
+                    <input type="text"id="input_mail" name="mail" />
                 <br />
                 <br />
                 <label for="password">パスワード</label><br />
-                <input type="password"id="input_password" name="password" /> <br /> <br />
+                    <input type="password"id="input_password" name="password" /> <br /> <br />
                 <label for="password">パスワードの再入力</label><br />
-                <input type="password" id="re_password" name="re_password" /> <br /> <br />
+                    <input type="password" id="re_password" name="re_password" /> <br /> <br />
                 <button type="submit" onclick="return check()">登録</button>
                 <br/>
                 <a href="#">利用規約</a>
