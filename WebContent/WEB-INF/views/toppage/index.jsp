@@ -5,11 +5,17 @@
     <c:param name="content">
         <h1>akanes-apprications</h1>
         <c:if test="${flush != null }">
-            <h2><c:out value="${flush}"/></h2>
+            <h2>
+                <c:out value="${flush}" />
+            </h2>
         </c:if>
         <c:if test="${sessionScope.login_user != null }">
             <a href="<c:url value="/logout"/>">ログアウト</a>
-            <h2>ログイン中：<c:out value="${sessionScope.login_user.name}"/>さん</h2>
+            <h2>
+                ログイン中：
+                <c:out value="${sessionScope.login_user.name}" />
+                さん
+            </h2>
         </c:if>
         <div class="main_container">
             <div class="main_item">
@@ -19,13 +25,13 @@
                 <a href="#"><img src="./images/top_dice.png"></img></a>
             </div>
             <div class="main_item">
-                <a href="#"><img src="./images/top_sheet.png"></img></a>
+                <a href="<c:url value="/charactersheet/index"/>"><img src="./images/top_sheet.png"></img></a>
             </div>
         </div>
         <button type="button" onclick="show_login()">ログイン</button>
         <button type="button" onclick="show_signup()">新規登録</button>
 
-<%-- サインアップフォーム --%>
+        <%-- サインアップフォーム --%>
 
         <form method="POST" name="signup_form" action="<c:url value="/signup" />">
             <div id="show_signup">
