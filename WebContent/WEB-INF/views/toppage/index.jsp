@@ -7,6 +7,10 @@
         <c:if test="${flush != null }">
             <h2><c:out value="${flush}"/></h2>
         </c:if>
+        <c:if test="${sessionScope.login_user != null }">
+            <a></a>
+            <h2>ログイン中：<c:out value="${sessionScope.login_user.name}"/>さん</h2>
+        </c:if>
         <div class="main_container">
             <div class="main_item">
                 <a href="#"><img src="./images/top_battle.png"></img></a>
@@ -23,7 +27,7 @@
 
 <%-- サインアップフォーム --%>
 
-        <form method="POST" name="signup_form" action="<c:url value="/login" />">
+        <form method="POST" name="signup_form" action="<c:url value="/signup" />">
             <div id="show_signup">
                 <label for="input_name">表示名</label><br />
                     <input type="text"id="input_name" name="name" />
@@ -37,7 +41,7 @@
                     <input type="password"id="input_password" name="password" /> <br /> <br />
                 <label for="password">パスワードの再入力</label><br />
                     <input type="password" id="re_password" name="re_password" /> <br /> <br />
-                <button type="submit" onclick="return check()">登録</button>
+                <button type="submit" onclick="return check_sigup()">登録</button>
                 <br/>
                 <a href="#">利用規約</a>
                 <a href="#">プライバシーポリシー</a>
@@ -46,15 +50,15 @@
 
 <%-- ここからログインフォーム --%>
 
-        <form method="POST" name="signin_form" action="<c:url value="/user/login" />">
+        <form method="POST" name="signin_form" action="<c:url value="/login" />">
             <div id="show_signin">
-                <label for="input_mail">メールアドレス</label><br />
-                <input type="text"id="input_mail" name="mail" />
+                <label for="sigin_mail">メールアドレス</label><br />
+                <input type="text"id="sigin_mail" name="sigin_mail" value="${sigin_mail}" />
                 <br />
                 <br />
                 <label for="password">パスワード</label><br />
-                <input type="password"id="input_password" name="password" /> <br /> <br />
-                <button type="submit" onclick="return check()">登録</button>
+                <input type="password"id="sigin_password" name="sigin_password" /> <br /> <br />
+                <button type="submit" onclick="return check_sigin()">登録</button>
                 <br/>
                 <a href="#">利用規約</a>
                 <a href="#">プライバシーポリシー</a>

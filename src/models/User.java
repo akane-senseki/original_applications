@@ -21,7 +21,7 @@ import javax.persistence.Table;
             query="SELECT COUNT(u) FROM User AS u"
             ),
     @NamedQuery(  //ログインする時にメールアドレスとパスワードが正しいかをチェックする
-            name="checkLoginPassword",
+            name="checkLogin",
             query="SELECT u FROM User AS u WHERE u.password = :pass AND u.mail = :mail"
             )
 
