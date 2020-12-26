@@ -8,7 +8,7 @@
             <h2><c:out value="${flush}"/></h2>
         </c:if>
         <c:if test="${sessionScope.login_user != null }">
-            <a></a>
+            <a href="<c:url value="/logout"/>">ログアウト</a>
             <h2>ログイン中：<c:out value="${sessionScope.login_user.name}"/>さん</h2>
         </c:if>
         <div class="main_container">
@@ -58,7 +58,7 @@
                 <br />
                 <label for="password">パスワード</label><br />
                 <input type="password"id="sigin_password" name="sigin_password" /> <br /> <br />
-                <button type="submit" onclick="return check_sigin()">登録</button>
+                <button type="submit" onclick="return check_sigin()">ログイン</button>
                 <br/>
                 <a href="#">利用規約</a>
                 <a href="#">プライバシーポリシー</a>

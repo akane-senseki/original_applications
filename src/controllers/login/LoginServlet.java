@@ -80,7 +80,7 @@ public class LoginServlet extends HttpServlet {
                 request.getSession().setAttribute("flush", "ログインに失敗しました");
                 request.setAttribute("mail", sigin_mail);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/toppage/index.jsp");
                 rd.forward(request, response);
             }else{
                 //認証できたらログイン状態にしてトップページへリダイレクト
